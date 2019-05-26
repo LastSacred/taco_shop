@@ -13,6 +13,11 @@ class TacosController < ApplicationController
     render json: @taco.to_json, status: :created
   end
 
+  def destroy
+    @taco = Taco.find(params['id'])
+    @taco.delete
+  end
+
   private
 
   def taco_params
