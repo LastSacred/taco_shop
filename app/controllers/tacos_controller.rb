@@ -21,6 +21,6 @@ class TacosController < ApplicationController
   private
 
   def taco_params
-		params.require(:taco).permit(:meat, :rice, :salsa, :notes)
+		params.require(:taco).permit(:meat, :rice, :beans, :salsa, :notes)
 	end
 end

@@ -40,6 +40,9 @@
           <input type="checkbox" ng-model="tc.newTaco.rice"> Rice
         </label>
         <label class="checkbox-inline">
+          <input type="checkbox" ng-model="tc.newTaco.beans"> Beans
+        </label>
+        <label class="checkbox-inline">
           <input type="checkbox" ng-model="tc.newTaco.salsa"> Salsa
         </label>
       </div>
@@ -63,6 +66,7 @@
         <th>Order #</th>
         <th>Meat</th>
         <th>Rice</th>
+        <th>Beans</th>
         <th>Salsa</th>
         <th>Notes</th>
         <th></th>
@@ -73,6 +77,7 @@
         <td>{{taco.id}}</td>
         <td class="meat">{{taco.meat}}</td>
         <td class="rice">{{taco.rice ? 'yes' : 'no'}}</td>
+        <td class="beans">{{taco.beans ? 'yes' : 'no'}}</td>
         <td class="salsa">{{taco.salsa ? 'yes' : 'no'}}</td>
         <td>{{taco.notes}}</td>
         <td><button type="button" class="btn btn-danger btn-xs fa fa-times" title="Delete this Taco" ng-click="tc.deleteTaco(taco)"></button></td>
@@ -90,6 +95,7 @@
 
   table.tacos td.meat,
   table.tacos td.rice,
+  table.tacos td.beans,
   table.tacos td.salsa {
     text-transform: capitalize;
   }
@@ -143,6 +149,7 @@
     var defaultTaco = {
       meat: 'chicken',
       rice: false,
+      beans: false,
       salsa: false,
       notes: ''
     };
