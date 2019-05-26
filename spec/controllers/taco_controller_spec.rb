@@ -19,7 +19,7 @@ RSpec.describe TacosController, type: :controller do
   end
 
   it "deletes a taco" do
-    taco = Taco.create(notes: 'This is a cool taco', meat: 'chicken', rice: true, beans: true, salsa: false)
+    taco = FactoryGirl.create(:taco)
 
     delete :destroy, params:{id: taco.id}
 
