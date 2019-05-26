@@ -9,6 +9,13 @@ class TacosController < ApplicationController
   end
 
   def create
-    byebug
+    @taco = Taco.create(taco_params)
+    render json: @taco.to_json, status: :created
   end
+
+  private
+
+  def taco_params
+		params.require(:taco).permit(:meat, :rice, :salsa, :notes)
+	end
 end
